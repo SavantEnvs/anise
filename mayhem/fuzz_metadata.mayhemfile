@@ -1,3 +1,3 @@
 project: anise
-target: fuzz_metadata
+target: /targets/fuzz_metadata
 duration: 90
