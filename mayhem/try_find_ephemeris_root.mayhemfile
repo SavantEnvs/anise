@@ -1,6 +1,3 @@
 version: '1.13'
 target: /targets/try_find_ephemeris_root
 duration: 90
-advanced_triage: true
-cmds:
-  - cmd: /targets/try_find_ephemeris_root @@
