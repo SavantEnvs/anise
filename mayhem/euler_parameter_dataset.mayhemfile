@@ -1,3 +1,3 @@
-version: '1.13'
-target: /targets/euler_parameter_dataset
+project: anise
+target: euler_parameter_dataset
 duration: 90
