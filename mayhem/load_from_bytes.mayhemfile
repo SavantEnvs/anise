@@ -1,0 +1,6 @@
+version: '1.13'
+target: /targets/load_from_bytes
+duration: 90
+advanced_triage: true
+cmds:
+  - cmd: /targets/load_from_bytes @@

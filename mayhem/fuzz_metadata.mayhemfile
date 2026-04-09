@@ -1,0 +1,6 @@
+version: '1.13'
+target: /targets/fuzz_metadata
+duration: 90
+advanced_triage: true
+cmds:
+  - cmd: /targets/fuzz_metadata @@

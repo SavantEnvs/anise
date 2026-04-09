@@ -1,0 +1,6 @@
+version: '1.13'
+target: /targets/parse_spk
+duration: 90
+advanced_triage: true
+cmds:
+  - cmd: /targets/parse_spk @@

@@ -1,0 +1,6 @@
+version: '1.13'
+target: /targets/euler_parameter_dataset
+duration: 90
+advanced_triage: true
+cmds:
+  - cmd: /targets/euler_parameter_dataset @@

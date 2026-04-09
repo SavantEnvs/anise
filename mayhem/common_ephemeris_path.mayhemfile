@@ -1,0 +1,6 @@
+version: '1.13'
+target: /targets/common_ephemeris_path
+duration: 90
+advanced_triage: true
+cmds:
+  - cmd: /targets/common_ephemeris_path @@
