@@ -1,3 +1,5 @@
 project: anise
-target: /targets/almanac_describe
+target: almanac_describe
 duration: 90
+cmds:
+  - cmd: /targets/almanac_describe @@

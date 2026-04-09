@@ -1,3 +1,5 @@
 project: anise
-target: /targets/spacecraft_dataset
+target: spacecraft_dataset
 duration: 90
+cmds:
+  - cmd: /targets/spacecraft_dataset @@

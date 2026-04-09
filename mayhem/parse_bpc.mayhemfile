@@ -1,3 +1,5 @@
 project: anise
-target: /targets/parse_bpc
+target: parse_bpc
 duration: 90
+cmds:
+  - cmd: /targets/parse_bpc @@

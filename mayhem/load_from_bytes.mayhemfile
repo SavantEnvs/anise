@@ -1,3 +1,5 @@
 project: anise
-target: /targets/load_from_bytes
+target: load_from_bytes
 duration: 90
+cmds:
+  - cmd: /targets/load_from_bytes @@

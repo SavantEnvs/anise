@@ -1,3 +1,5 @@
 project: anise
-target: /targets/parse_spk
+target: parse_spk
 duration: 90
+cmds:
+  - cmd: /targets/parse_spk @@

@@ -1,3 +1,5 @@
 project: anise
-target: /targets/try_find_ephemeris_root
+target: try_find_ephemeris_root
 duration: 90
+cmds:
+  - cmd: /targets/try_find_ephemeris_root @@

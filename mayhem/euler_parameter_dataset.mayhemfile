@@ -1,3 +1,5 @@
 project: anise
-target: /targets/euler_parameter_dataset
+target: euler_parameter_dataset
 duration: 90
+cmds:
+  - cmd: /targets/euler_parameter_dataset @@

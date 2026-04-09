@@ -1,3 +1,5 @@
 project: anise
-target: /targets/common_ephemeris_path
+target: common_ephemeris_path
 duration: 90
+cmds:
+  - cmd: /targets/common_ephemeris_path @@
