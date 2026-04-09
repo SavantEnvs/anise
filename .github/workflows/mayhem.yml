@@ -9,6 +9,8 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      image: ${{ steps.meta.outputs.tags }}
     steps:
     - uses: actions/checkout@v6
     - name: Log in to the Container registry
@@ -32,53 +34,27 @@ jobs:
         push: true
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
-    - name: Start Mayhem analysis for parse_spk
+  analyze:
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        target:
+          - parse_spk
+          - parse_bpc
+          - load_from_bytes
+          - fuzz_metadata
+          - almanac_describe
+          - common_ephemeris_path
+          - try_find_ephemeris_root
+          - spacecraft_dataset
+          - planetary_dataset
+          - euler_parameter_dataset
+    steps:
+    - uses: actions/checkout@v6
+    - name: Start Mayhem analysis for ${{ matrix.target }}
       uses: forallsecure/mcode-action@long-runs
       with:
         mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-        args: --image ${{ steps.meta.outputs.tags }} --file mayhem/parse_spk.mayhemfile
-    - name: Start Mayhem analysis for parse_bpc
-      uses: forallsecure/mcode-action@long-runs
-      with:
-        mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-        args: --image ${{ steps.meta.outputs.tags }} --file mayhem/parse_bpc.mayhemfile
-    - name: Start Mayhem analysis for load_from_bytes
-      uses: forallsecure/mcode-action@long-runs
-      with:
-        mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-        args: --image ${{ steps.meta.outputs.tags }} --file mayhem/load_from_bytes.mayhemfile
-    - name: Start Mayhem analysis for fuzz_metadata
-      uses: forallsecure/mcode-action@long-runs
-      with:
-        mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-        args: --image ${{ steps.meta.outputs.tags }} --file mayhem/fuzz_metadata.mayhemfile
-    - name: Start Mayhem analysis for almanac_describe
-      uses: forallsecure/mcode-action@long-runs
-      with:
-        mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-        args: --image ${{ steps.meta.outputs.tags }} --file mayhem/almanac_describe.mayhemfile
-    - name: Start Mayhem analysis for common_ephemeris_path
-      uses: forallsecure/mcode-action@long-runs
-      with:
-        mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-        args: --image ${{ steps.meta.outputs.tags }} --file mayhem/common_ephemeris_path.mayhemfile
-    - name: Start Mayhem analysis for try_find_ephemeris_root
-      uses: forallsecure/mcode-action@long-runs
-      with:
-        mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-        args: --image ${{ steps.meta.outputs.tags }} --file mayhem/try_find_ephemeris_root.mayhemfile
-    - name: Start Mayhem analysis for spacecraft_dataset
-      uses: forallsecure/mcode-action@long-runs
-      with:
-        mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-        args: --image ${{ steps.meta.outputs.tags }} --file mayhem/spacecraft_dataset.mayhemfile
-    - name: Start Mayhem analysis for planetary_dataset
-      uses: forallsecure/mcode-action@long-runs
-      with:
-        mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-        args: --image ${{ steps.meta.outputs.tags }} --file mayhem/planetary_dataset.mayhemfile
-    - name: Start Mayhem analysis for euler_parameter_dataset
-      uses: forallsecure/mcode-action@long-runs
-      with:
-        mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-        args: --image ${{ steps.meta.outputs.tags }} --file mayhem/euler_parameter_dataset.mayhemfile
+        args: --image ${{ needs.build.outputs.image }} --file mayhem/${{ matrix.target }}.mayhemfile
