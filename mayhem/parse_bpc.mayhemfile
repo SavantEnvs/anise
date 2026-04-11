@@ -2,4 +2,5 @@ project: anise
 target: parse_bpc
 duration: 90
 cmds:
-  - cmd: /targets/parse_bpc @@
+  - cmd: /targets/parse_bpc
+    libfuzzer: true

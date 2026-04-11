@@ -2,4 +2,5 @@ project: anise
 target: parse_spk
 duration: 90
 cmds:
-  - cmd: /targets/parse_spk @@
+  - cmd: /targets/parse_spk
+    libfuzzer: true

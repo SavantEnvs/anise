@@ -2,4 +2,5 @@ project: anise
 target: fuzz_metadata
 duration: 90
 cmds:
-  - cmd: /targets/fuzz_metadata @@
+  - cmd: /targets/fuzz_metadata
+    libfuzzer: true

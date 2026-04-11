@@ -2,4 +2,5 @@ project: anise
 target: spacecraft_dataset
 duration: 90
 cmds:
-  - cmd: /targets/spacecraft_dataset @@
+  - cmd: /targets/spacecraft_dataset
+    libfuzzer: true

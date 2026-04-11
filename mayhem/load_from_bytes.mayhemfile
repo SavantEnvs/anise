@@ -2,4 +2,5 @@ project: anise
 target: load_from_bytes
 duration: 90
 cmds:
-  - cmd: /targets/load_from_bytes @@
+  - cmd: /targets/load_from_bytes
+    libfuzzer: true

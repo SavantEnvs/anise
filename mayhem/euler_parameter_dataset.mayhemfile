@@ -2,4 +2,5 @@ project: anise
 target: euler_parameter_dataset
 duration: 90
 cmds:
-  - cmd: /targets/euler_parameter_dataset @@
+  - cmd: /targets/euler_parameter_dataset
+    libfuzzer: true
