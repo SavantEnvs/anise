@@ -1,14 +1,7 @@
 name: ANISE GUI
 
 on:
-  push:
-    branches:
-      - master
-    tags:
-      - '*'
-  pull_request:
   workflow_dispatch:
-
 env:
     RUST_BACKTRACE: 1
     RUST_LOG: info

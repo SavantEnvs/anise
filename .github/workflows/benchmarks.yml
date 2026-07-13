@@ -1,14 +1,7 @@
 name: Benchmark ANISE versus SPICE
 
 on:
-  push:
-    branches:
-      - master
-    tags:
-      - "*"
-  pull_request:
   workflow_dispatch:
-
 jobs:
   ephem_type2_chebyshev:
     name: SPICE versus ANISE Benchmark
