@@ -1,0 +1,6 @@
+project: savantenvs/anise
+target: parse_spk
+
+cmds:
+  - cmd: /mayhem/parse_spk
+    libfuzzer: true

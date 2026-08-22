@@ -1,0 +1,6 @@
+project: savantenvs/anise
+target: fuzz_metadata
+
+cmds:
+  - cmd: /mayhem/fuzz_metadata
+    libfuzzer: true
