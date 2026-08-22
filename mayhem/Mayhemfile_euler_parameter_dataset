@@ -1,0 +1,6 @@
+project: savantenvs/anise
+target: euler_parameter_dataset
+
+cmds:
+  - cmd: /mayhem/euler_parameter_dataset
+    libfuzzer: true
