@@ -1,0 +1,6 @@
+project: savantenvs/anise
+target: spacecraft_dataset
+
+cmds:
+  - cmd: /mayhem/spacecraft_dataset
+    libfuzzer: true

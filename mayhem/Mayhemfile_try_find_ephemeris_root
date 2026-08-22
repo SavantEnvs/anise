@@ -1,0 +1,6 @@
+project: savantenvs/anise
+target: try_find_ephemeris_root
+
+cmds:
+  - cmd: /mayhem/try_find_ephemeris_root
+    libfuzzer: true
