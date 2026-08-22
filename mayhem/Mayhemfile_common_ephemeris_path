@@ -1,0 +1,6 @@
+project: savantenvs/anise
+target: common_ephemeris_path
+
+cmds:
+  - cmd: /mayhem/common_ephemeris_path
+    libfuzzer: true
