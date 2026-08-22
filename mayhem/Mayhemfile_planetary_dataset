@@ -1,0 +1,6 @@
+project: savantenvs/anise
+target: planetary_dataset
+
+cmds:
+  - cmd: /mayhem/planetary_dataset
+    libfuzzer: true

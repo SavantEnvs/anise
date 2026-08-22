@@ -1,0 +1,6 @@
+project: savantenvs/anise
+target: load_from_bytes
+
+cmds:
+  - cmd: /mayhem/load_from_bytes
+    libfuzzer: true
