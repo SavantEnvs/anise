@@ -1,0 +1,7 @@
+# seed-from: https://app.mayhem.security/savantenvs/anise/common-ephemeris-path
+project: savantenvs/anise
+target: common_ephemeris_path-mined-71e973a
+
+cmds:
+  - cmd: /mayhem/common_ephemeris_path
+    libfuzzer: true
