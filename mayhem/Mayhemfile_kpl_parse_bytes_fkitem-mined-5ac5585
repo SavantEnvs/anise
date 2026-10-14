@@ -1,0 +1,6 @@
+project: savantenvs/anise
+target: kpl_parse_bytes_fkitem-mined-5ac5585
+
+cmds:
+  - cmd: /mayhem/kpl_parse_bytes_fkitem
+    libfuzzer: true
