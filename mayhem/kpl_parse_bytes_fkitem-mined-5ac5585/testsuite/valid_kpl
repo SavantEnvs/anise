@@ -1,0 +1,5 @@
+\begindata
+FRAME_BODY_X = 1
+FRAME_X_NAME = 'X'
+\begintext
+ok
