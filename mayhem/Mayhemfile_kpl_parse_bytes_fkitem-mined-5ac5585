@@ -1,0 +1,9 @@
+project: savantenvs/anise
+target: kpl_parse_bytes_fkitem-mined-5ac5585
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/kpl_parse_bytes_fkitem-mined-5ac5585/testsuite
+
+cmds:
+  - cmd: /mayhem/kpl_parse_bytes_fkitem
+    libfuzzer: true
